@@ -1,23 +1,22 @@
-import logo from './logo.svg';
 import './App.css';
+import Header from "./components/Header";
+import VotePanel from "./components/VotePanel";
+import Grid from "@material-ui/core/Grid";
+import React from "react";
+import Container from "@material-ui/core/Container";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+        <Grid container spacing={1}>
+            <Grid  item xs={12} >
+                <Header/>
+            </Grid>
+            <Grid  item xs={12} sm={12} spacing={3} >
+                <VotePanel />
+            </Grid>
+        </Grid>
+
     </div>
   );
 }
