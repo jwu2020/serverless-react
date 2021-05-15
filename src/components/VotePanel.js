@@ -54,11 +54,10 @@ function VotePanel() {
     const [submissionData, setSubmissionData] = useState([]);
 
     // Get submission data
-    // Loads article information from mongo
     useEffect(() => {
         const fetchData = async () => {
             const options = {
-                url: 'https://5y2lc2meoe.execute-api.ap-southeast-2.amazonaws.com/develop/submission',
+                url: 'https://6fexefm5q6.execute-api.ap-southeast-2.amazonaws.com/Prod/submission',
                 method: 'GET',
                 headers: {
                     'Accept': 'application/json',
@@ -142,7 +141,6 @@ function VotePanel() {
             }}
         />
     )
-
 }
 
 
