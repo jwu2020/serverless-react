@@ -19,7 +19,7 @@
   },
   "scripts": {
     "start": "export REACT_APP_API_GATEWAY_BASE_URL=https://31mbrnt64l.execute-api.ap-southeast-2.amazonaws.com/prod && react-scripts start",
-    "build": "export REACT_APP_API_GATEWAY_REACT_APP_API_GATEWAY_BASE_URL=https://31mbrnt64l.execute-api.ap-southeast-2.amazonaws.com/prBASE_URL=https://31mbrnt64l.execute-api.ap-southeast-2.amazonaws.com/prod &&  react-scripts build",
+    "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },

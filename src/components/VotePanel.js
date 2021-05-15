@@ -12,36 +12,7 @@ import {
 } from "@material-ui/icons";
 import Loader from "react-loader-spinner";
 
-//
-// function get_all_submissions() {
-//     const options = {
-//         url: 'https://5y2lc2meoe.execute-api.ap-southeast-2.amazonaws.com/develop/submission',
-//         method: 'GET',
-//         headers: {
-//             'Accept': 'application/json',
-//             'Content-Type': 'application/json;charset=UTF-8'
-//         },
-//         params: {
-//             'sql_query':'select * from submissions',
-//             'table':'submissions'
-//         }
-//     };
-//
-//     axios(options)
-//         .then(response => {
-//             console.log(response);
-//             console.log(response.status);
-//
-//             if (response.status === 200) {
-//                 setSubmissionData(response.data);
-//                 setLoading(false);
-//             } else {
-//                 return []
-//             }
-//
-//         });
-//
-// }
+
 const style = {
     top:'50%',
     position:'absolute',
@@ -56,8 +27,10 @@ function VotePanel() {
     // Get submission data
     useEffect(() => {
         const fetchData = async () => {
+            const api_url = process.env.REACT_APP_API_GATEWAY_BASE_URL + "/submission"
+            console.log('api url = ' + api_url)
             const options = {
-                url: 'https://6fexefm5q6.execute-api.ap-southeast-2.amazonaws.com/Prod/submission',
+                url: api_url,
                 method: 'GET',
                 headers: {
                     'Accept': 'application/json',
@@ -76,6 +49,7 @@ function VotePanel() {
 
                     if (response.status === 200) {
                         setSubmissionData(response.data);
+                        console.log(response.data)
                         setLoading(false);
                         console.log('hi')
                     } else {
@@ -86,8 +60,7 @@ function VotePanel() {
         fetchData();
     }, []);
 
-
-
+    console.log('Test', process.env.REACT_APP_API_GATEWAY_BASE_URL, process.env);
 
     if (isLoading) {
 
@@ -101,6 +74,8 @@ function VotePanel() {
             />
         );
     }
+
+    console.log(submissionData)
 
     if (submissionData === []) {
         return (
@@ -118,6 +93,7 @@ function VotePanel() {
         { field: 'submitted_by', title: 'Submitted By' }
 
     ]
+
 
     const tableIcons = {
         FirstPage: forwardRef((props, ref) => <FirstPage {...props} ref={ref} />),
@@ -145,3 +121,4 @@ function VotePanel() {
 
 
 export default VotePanel;
+
