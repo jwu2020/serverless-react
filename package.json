@@ -7,6 +7,7 @@
     "@testing-library/jest-dom": "^5.12.0",
     "@testing-library/react": "^11.2.6",
     "@testing-library/user-event": "^12.8.3",
+    "aws-sdk": "^2.907.0",
     "axios": "^0.21.1",
     "material-table": "^1.69.3",
     "material-ui": "^0.20.2",
@@ -17,8 +18,8 @@
     "web-vitals": "^1.1.2"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
+    "start": "export REACT_APP_API_GATEWAY_BASE_URL=https://31mbrnt64l.execute-api.ap-southeast-2.amazonaws.com/prod && react-scripts start",
+    "build": "export REACT_APP_API_GATEWAY_REACT_APP_API_GATEWAY_BASE_URL=https://31mbrnt64l.execute-api.ap-southeast-2.amazonaws.com/prBASE_URL=https://31mbrnt64l.execute-api.ap-southeast-2.amazonaws.com/prod &&  react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
@@ -44,6 +45,7 @@
     "@material-ui/data-grid": "^4.0.0-alpha.27",
     "@material-ui/icons": "^4.11.2",
     "clsx": "^1.1.1",
+    "cross-env": "^7.0.3",
     "prop-types": "^15.7.2"
   }
 }
