@@ -12,7 +12,6 @@ import {
 } from "@material-ui/icons";
 import Loader from "react-loader-spinner";
 
-
 const style = {
     top:'50%',
     position:'absolute',
@@ -57,7 +56,7 @@ function VotePanel() {
         fetchData();
     }, []);
 
-    console.log('Test', process.env.REACT_APP_API_GATEWAY_BASE_URL, process.env);
+    console.log(process.env.REACT_APP_API_GATEWAY_BASE_URL, process.env);
 
     if (isLoading) {
 
@@ -82,13 +81,11 @@ function VotePanel() {
         );
     }
 
-
     const headers = [
         { field: 'name', title: 'Snack' },
         { field: 'upvote', title: 'Up Votes'},
         { field: 'downvote', title: 'Down Votes' },
         { field: 'submitted_by', title: 'Submitted By' }
-
     ]
 
 
