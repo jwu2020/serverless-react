@@ -44,14 +44,11 @@ function VotePanel() {
             await axios(options)
                 .then(response => {
                     console.log(response);
-                    console.log(response.status);
-                    console.log("again")
 
                     if (response.status === 200) {
                         setSubmissionData(response.data);
                         console.log(response.data)
                         setLoading(false);
-                        console.log('hi')
                     } else {
                         return []
                     }
