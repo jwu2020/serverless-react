@@ -18,7 +18,7 @@
     "web-vitals": "^1.1.2"
   },
   "scripts": {
-    "start": "export REACT_APP_API_GATEWAY_BASE_URL=https://31mbrnt64l.execute-api.ap-southeast-2.amazonaws.com/prod && react-scripts start",
+    "start": "export REACT_APP_API_GATEWAY_BASE_URL=$REACT_APP_API_GATEWAY_BASE_URL && react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
